@@ -1,53 +1,91 @@
+# LangChain AI Projects
 
-## Local Ollama Setup
+This repository contains multiple LangChain-based projects demonstrating different AI capabilities and integrations. Each folder contains a self-contained project with its own documentation and setup instructions.
 
-This project supports running with a local Ollama model instead of using Google's Gemini API. Here's how to set it up:
+## Project Structure
+
+### 1. `/api` - LangChain API Server
+A FastAPI-based server that exposes LangChain functionality through REST endpoints. This includes:
+- Essay generation
+- Poem generation
+- Integration with Google's Gemini model
+- LangServe for serving LangChain models
+
+### 2. `/rag` - Retrieval-Augmented Generation Examples
+Multiple RAG (Retrieval-Augmented Generation) implementations for different document types:
+- **PDF Document Processing**: Extract and process text from PDF files
+- **Web Content Processing**: Scrape and process content from web pages
+- **Text File Processing**: Load and process plain text documents
+- Vector similarity search using FAISS and Chroma
+
+### 3. `/retriever-chain` - Advanced Document Retrieval System
+A more sophisticated document retrieval system featuring:
+- PDF document processing with PyPDF
+- Advanced text chunking and embedding
+- Vector similarity search with FAISS
+- Integration with Google's Gemini for question answering
+- Streamlit-based web interface
+
+### 4. `/chatbot` - Interactive Chatbot
+A Streamlit-based chatbot interface with support for:
+- Google Gemini integration
+- Local Ollama model support
+- Conversation history
+- Simple and intuitive UI
+
+## Getting Started
 
 ### Prerequisites
+- Python 3.8+
+- pip (Python package manager)
+- Google Gemini API key (for cloud-based features)
+- Ollama (for local model support)
 
-1. Install [Ollama](https://ollama.ai/) on your local machine
-2. Pull the desired model (e.g., llama3.2):
+### Installation
+1. Clone the repository:
    ```bash
-   ollama pull llama3.2
+   git clone <repository-url>
+   cd langchain-ai
+
+2. Create and activate a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-### Running with Ollama
-
-1. Navigate to the chatbot directory:
+3. Install the required dependencies:
    ```bash
-   cd chatbot
+   pip install -r requirements.txt
    ```
 
-2. Run the Streamlit application with Ollama:
+4. Create a `.env` file in the project root and add your Google Gemini API key:
+   ```
+   GOOGLE_API_KEY=your_google_api_key_here
+   ```
+
+## Running the Application
+
+1. Navigate to the desired project directory:
    ```bash
-   streamlit run localollama.py
+   cd <project-directory>
+   ```
+
+2. Run the Streamlit application:
+   ```bash
+   streamlit run <application-file>
    ```
 
 3. Open your browser and navigate to `http://localhost:8501`
 
-### Key Differences from Gemini Version
+## Troubleshooting
 
-- No API key required
-- Runs entirely locally on your machine
-- Uses the Ollama framework to manage local LLMs
-- May have different performance characteristics compared to cloud-based models
-
-### Customizing the Ollama Model
-
-You can modify the model in `chatbot/localollama.py` by changing the model name:
-
-```python
-# Change "llama3.2" to any model you've downloaded with Ollama
-llm = Ollama(model="llama3.2")
-```
-
-### Troubleshooting Ollama
-
-- Ensure Ollama is running in the background
-- Verify the model is downloaded using `ollama list`
-- Check available models at [Ollama Library](https://ollama.ai/library)
-- For GPU acceleration, ensure you have the correct drivers installed
+- If you encounter any issues, please check the error message and try to resolve it.
+- If you are still having issues, please contact the author for assistance.
 
 ## License
 
 MIT License
+
+## Author
+
+Praveen Kumar
