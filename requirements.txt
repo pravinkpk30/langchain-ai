@@ -1,0 +1,17 @@
+langchain-google-genai
+langchain-core
+python-dotenv
+langchain-openai
+streamlit
+langchain-community
+langserve
+fastapi
+uvicorn
+sse_starlette
+sentence-transformers
+faiss-cpu
+chromadb
+beautifulsoup4
+bs4
+pdfminer.six
+pypdf
