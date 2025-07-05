@@ -33,6 +33,26 @@ A Streamlit-based chatbot interface with support for:
 - Conversation history
 - Simple and intuitive UI
 
+### 5. Groq RAG Chat
+Location: `/groq`  
+A high-performance document Q&A system using Groq's LLM (Llama 3 8B) with LangChain for retrieval-augmented generation.
+
+**Features:**
+- Web document loading and processing
+- FAISS vector store for efficient similarity search
+- Interactive chat interface with Streamlit
+- Context-aware responses using RAG
+
+### 6. Hugging Face RAG Chat
+Location: `/huggingface`  
+A high-performance document Q&A system using Hugging Face's T5 model with LangChain for retrieval-augmented generation.
+
+**Features:**
+- Web document loading and processing
+- FAISS vector store for efficient similarity search
+- Interactive chat interface with Streamlit
+- Context-aware responses using RAG
+
 ## Getting Started
 
 ### Prerequisites
