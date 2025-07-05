@@ -17,3 +17,5 @@ pdfminer.six
 pypdf
 arxiv
 wikipedia
+groq
+langchain-groq
